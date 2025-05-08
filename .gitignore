@@ -1,0 +1,40 @@
+# Node.js
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.idea/
+.vscode/
+
+# Optional npm debug files
+npm-debug.log
+
+# Angular build files
+/dist/
+/.tmp/
+
+# Angular specific
+.angular/
+
+# Angular CLI
+.angular/cache/
+
+# SASS build artifacts
+.sass-cache/
+
+# VS Code settings folder
+.vscode/
+
+# NPM package lock file
+package-lock.json
