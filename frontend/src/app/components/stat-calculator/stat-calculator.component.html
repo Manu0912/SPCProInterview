@@ -1,0 +1,100 @@
+<p-toast></p-toast>
+
+<p-card header="Statistical Calculator">
+  <div class="p-card-content" [ngClass]="{'no-results': !result}">
+    <form #f="ngForm" (ngSubmit)="calculate(f)" class="p-fluid">
+      <div class="p-field">
+        <label for="lower">Lower Limit</label>
+        <input
+          id="lower"
+          name="lower"
+          type="number"
+          required
+          [(ngModel)]="lowerLimit"
+          pInputText
+          placeholder="Enter lower limit"
+          [disabled]="limitsSet"
+        />
+      </div>
+
+      <div class="p-field">
+        <label for="upper">Upper Limit</label>
+        <input
+          id="upper"
+          name="upper"
+          type="number"
+          required
+          [(ngModel)]="upperLimit"
+          pInputText
+          placeholder="Enter upper limit"
+          [disabled]="limitsSet"
+        />
+      </div>
+
+      <div *ngIf="!limitsSet" class="p-field">
+        <button
+          pButton
+          type="button"
+          label="Set Limits"
+          icon="pi pi-check"
+          (click)="setLimits()"
+          [disabled]="!lowerLimit || !upperLimit"
+        ></button>
+      </div>
+
+      <div class="p-field">
+        <label for="values">Values (comma-separated)</label>
+        <textarea
+          id="values"
+          name="values"
+          rows="3"
+          required
+          [(ngModel)]="rawValues"
+          pTextarea
+          placeholder="Enter values separated by commas"
+        ></textarea>
+      </div>
+
+      <button
+        pButton
+        type="submit"
+        label="Calculate"
+        icon="pi pi-calculator"
+        [disabled]="loading || !limitsSet"
+      ></button>
+    </form>
+
+    <div class="results">
+      <ng-container *ngIf="result; else noResults">
+        <h3>Results</h3>
+        <ul>
+          <li>
+            <span>Mean</span>
+            <span>{{ result.mean | number:'1.2-2' }}</span>
+          </li>
+          <li>
+            <span>Median</span>
+            <span>{{ result.median | number:'1.2-2' }}</span>
+          </li>
+          <li>
+            <span>Standard Deviation</span>
+            <span>{{ result.stdDeviation | number:'1.2-2' }}</span>
+          </li>
+          <li>
+            <span>Variance</span>
+            <span>{{ result.variance | number:'1.2-2' }}</span>
+          </li>
+          <li>
+            <span>Out-of-Spec Count</span>
+            <span>{{ result.outOfSpecCount }}</span>
+          </li>
+        </ul>
+      </ng-container>
+      <ng-template #noResults>
+        <div class="no-results-message">
+          No results yet.
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</p-card>

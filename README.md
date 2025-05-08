@@ -67,3 +67,92 @@ PORT=3000
 npm run dev
 
 The server should start on the port specified in `.env`. By default, it listens on port `3000`.
+
+---
+
+# 📊 SPCProInterview - Frontend
+
+This is an Angular frontend that provides a modern and responsive user interface for statistical analysis.
+
+---
+
+## ✅ Frontend Prerequisites
+
+Ensure you have installed:
+
+- **Node.js** (v18 or later recommended): https://nodejs.org/
+- **npm** (comes with Node.js)
+- **Angular CLI** (v19 or later): `npm install -g @angular/cli`
+
+---
+
+## 🚀 Frontend Installation
+
+```bash
+cd SPCProInterview/frontend
+npm install
+```
+
+---
+
+## 📦 Frontend Scripts
+
+```bash
+npm start          # Start development server
+npm run build     # Build for production
+npm run test      # Run unit tests
+```
+
+---
+
+## 📁 Frontend Project Structure
+
+```
+frontend/
+├── src/
+│   ├── app/
+│   │   ├── components/     # Reusable components
+│   │   ├── services/       # Business logic and services
+│   │   ├── models/         # Interfaces and types
+│   │   ├── shared/         # Shared components and utilities
+│   │   └── app.module.ts   # Main module
+│   ├── assets/            # Static resources
+│   ├── environments/      # Environment configurations
+│   └── styles/           # Global styles
+├── angular.json          # Angular configuration
+├── package.json         # Dependencies and scripts
+└── tsconfig.json       # TypeScript configuration
+```
+
+---
+
+## 🎨 Main Frontend Technologies
+
+- **Angular 19**: Main framework
+- **PrimeNG**: UI component library
+- **PrimeFlex**: CSS utilities system
+- **RxJS**: Reactive programming
+- **TypeScript**: Programming language
+
+---
+
+## 🚀 Starting the Frontend
+
+```bash
+cd frontend
+npm start
+```
+
+The application will start at `http://localhost:4200` by default.
+
+---
+
+## 📦 Frontend Production Build
+
+```bash
+npm run build
+```
+
+Production files will be generated in the `dist/` directory.
+
+---
